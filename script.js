@@ -6,19 +6,23 @@ function calculateTypography() {
     const lineHeightMultiplier = parseFloat(document.getElementById('lineHeightMultiplier').value);
     const lineHeightRound = parseInt(document.getElementById('lineHeightRound').value, 10);
 
-    // Initialize results array
-    let results = '';
+    // Initialize results table body
+    let resultsBody = '';
 
     // Calculate sizes and line heights for each step from -10 to 10
     for (let i = -10; i <= 10; i++) {
         const fontSize = roundTo(baseSize * Math.pow(sizeMultiplier, i), sizeRound);
         const lineHeight = roundTo(fontSize * lineHeightMultiplier, lineHeightRound);
 
-        results += `<p>Step ${i}: Font Size = ${fontSize}px, Line Height = ${lineHeight}px</p>`;
+        resultsBody += `<tr>
+                            <td>${i}</td>
+                            <td>${fontSize}</td>
+                            <td>${lineHeight}</td>
+                        </tr>`;
     }
 
-    // Display the results
-    document.getElementById('results').innerHTML = results;
+    // Display the results in the table
+    document.getElementById('results-body').innerHTML = resultsBody;
 }
 
 function roundTo(value, roundTo) {
