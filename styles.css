@@ -25,9 +25,22 @@ button {
     margin-top: 10px;
 }
 
-#results p {
-    background: #f9f9f9;
-    padding: 10px;
+#results {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
     border: 1px solid #ddd;
-    margin-bottom: 5px;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
 }
